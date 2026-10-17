@@ -1,0 +1,258 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.btn, .tab {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #007bff;
+    font-size: 18px;
+    min-width: 120px;
+    min-height: 36px;
+    transition: background 0.2s;
+}
+
+.btn:hover, .tab:hover {
+    background: #e9ecef;
+}
+
+.tab.active {
+    background: #0056b3;
+    color: white;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.explanation {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#feedbacks .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.details {
+    flex: 1;
+    min-width: 200px;
+    font-size: 16px;
+}
+
+#no-feedback {
+    color: red;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background: #e9ecef;
+}
+
+.bar {
+    fill: #007bff;
+}
+
+.bar-text {
+    font-size: 12px;
+}
+
+#prob-chart, #models-chart {
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#max-prob {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.controls button, .controls input {
+    padding: 8px 16px;
+    min-width: 120px;
+    min-height: 36px;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.controls button:hover {
+    background: #0056b3;
+}
+
+.controls input {
+    background: white;
+    color: black;
+    border: 1px solid #dee2e6;
+}
+
+#batch-form, #model-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#batch-form label, #model-form label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+footer.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+footer button {
+    padding: 8px 16px;
+    min-width: 120px;
+    min-height: 36px;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+footer button:hover {
+    background: #0056b3;
+}
+
+#error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#grid-container {
+    display: inline-block;
+    margin: 20px;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-cell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+}
+
+.grid-cell.active {
+    background-color: black;
+}
+
+#submit-btn, #feedback-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#probabilities {
+    margin: 20px;
+}
+
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+    }
+    main {
+        padding: 10px;
+    }
+    .btn, .tab, .controls button, .controls input, footer button {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 100px;
+        min-height: 32px;
+    }
+}

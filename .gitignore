@@ -1,0 +1,8 @@
+# The python cache
+app/__pycache__
+
+# The web server create at each launch
+app/flask_server.py
+
+# The database
+app/data/database.db

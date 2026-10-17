@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Administration</h1>
+        <nav>
+            <button class="tab active" data-tab="home">Accueil</button>
+            <button class="tab" data-tab="feedbacks">Feedbacks</button>
+            <button class="tab" data-tab="batches">Lots d'entraînement</button>
+            <button class="tab" data-tab="models">Modèles</button>
+            <a href="/" class="btn">Retour</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="tab-content active">
+            <h2>Welcome to the administration interface</h2>
+            <p>Use the tabs to manage data :</p>
+            <ul>
+                <li><strong>Feedbacks</strong> : View 16x16 grids, navigate, delete or create batches.</li>
+                <li><strong>Training batch</strong> : View batches, delete or create templates.</li>
+                <li><strong>Model</strong> : View model losses, navigate or delete.</li>
+            </ul>
+            <p>Each action is confirmed to avoid errors.</p>
+        </section>
+        <section id="feedbacks" class="tab-content">
+            <div class="content">
+                <div class="grid-container"></div>
+                <div class="details">
+                    <p id="no-feedback" style="display: none;">No feedback available</p>
+                    <p>ID: <span id="fb-id"></span></p>
+                    <p>Detected figure: <span id="fb-prob-max"></span></p>
+                    <p>Date: <span id="fb-date"></span></p>
+                    <p>Model: <span id="fb-model-id"></span></p>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prev-fb">Previous</button>
+                <button id="next-fb">Next</button>
+                <input type="number" id="fb-id-input" placeholder="Entrer ID">
+                <button id="delete-fb">Delete</button>
+                <button id="create-batch">Create batche</button>
+                <div id="batch-form" style="display: none;">
+                    <label>Min ID: <input type="number" id="batch-min"></label>
+                    <label>Max ID: <input type="number" id="batch-max"></label>
+                    <button id="submit-batch">Validate</button>
+                </div>
+            </div>
+        </section>
+        <section id="batches" class="tab-content">
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Min Feedback</th><th>Max Feedback</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="batches-table"></tbody>
+            </table>
+            <div class="controls">
+                <button id="prev-batch">Précédent</button>
+                <button id="next-batch">Suivant</button>
+                <button id="create-model">Créer modèle</button>
+                <div id="model-form" style="display: none;">
+                    <label>Min ID: <input type="number" id="model-min"></label>
+                    <label>Max ID: <input type="number" id="model-max"></label>
+                    <button id="submit-model">Valider</button>
+                </div>
+            </div>
+        </section>
+        <section id="models" class="tab-content">
+            <svg id="models-chart" width="800" height="300"></svg>
+            <p>Détails: <span id="model-details"></span></p>
+            <div class="controls">
+                <button id="prev-model">Précédent</button>
+                <button id="next-model">Suivant</button>
+                <button id="delete-model">Supprimer</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p id="error-message"></p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

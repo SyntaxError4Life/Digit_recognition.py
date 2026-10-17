@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw a number</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Draw a number (16x16)</h1>
+        <nav>
+            <a href="/admin" class="btn">Admin</a>
+        </nav>
+    </header>
+    <main>
+        <div class="explanation">
+            <p>Draw a number on the 16x16 grid by clicking on the squares. Click "Submit" to get a prediction. If the prediction is correct, use "Send Feedback" to save your drawing.</p>
+        </div>
+        <div class="content">
+            <div class="grid-container" id="grid-container"></div>
+            <div id="probabilities">
+                <svg id="prob-chart" width="400" height="300"></svg>
+                <h2>Probabilities</h2>
+                <p id="max-prob">Predicted figure: None</p>
+            </div>
+        </div>
+    </main>
+    <footer class="actions">
+        <button id="reset-btn">Reset</button>
+        <button id="submit-btn">Submit</button>
+        <button id="feedback-btn" style="display: none;">Send Feedback</button>
+    </footer>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
